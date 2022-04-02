@@ -1,2 +1,2 @@
 # SatStacker
-Know how old your sats are, and how many they are
+Know how old and many someones sats are
