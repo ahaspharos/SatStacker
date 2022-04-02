@@ -1,0 +1,66 @@
+﻿@page
+@model SatStackerWeb.Pages.Transaction.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>EntityTransaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EntityTransaction.EntityTransactionId" />
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Type" class="control-label"></label>
+                <select asp-for="EntityTransaction.Type" class="form-control"></select>
+                <span asp-validation-for="EntityTransaction.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Date" class="control-label"></label>
+                <input asp-for="EntityTransaction.Date" class="form-control" />
+                <span asp-validation-for="EntityTransaction.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Amount" class="control-label"></label>
+                <input asp-for="EntityTransaction.Amount" class="form-control" />
+                <span asp-validation-for="EntityTransaction.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.ValuePerUnitinEuros" class="control-label"></label>
+                <input asp-for="EntityTransaction.ValuePerUnitinEuros" class="form-control" />
+                <span asp-validation-for="EntityTransaction.ValuePerUnitinEuros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Create" class="control-label"></label>
+                <input asp-for="EntityTransaction.Create" class="form-control" />
+                <span asp-validation-for="EntityTransaction.Create" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Update" class="control-label"></label>
+                <input asp-for="EntityTransaction.Update" class="form-control" />
+                <span asp-validation-for="EntityTransaction.Update" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntityTransaction.Delete" class="control-label"></label>
+                <input asp-for="EntityTransaction.Delete" class="form-control" />
+                <span asp-validation-for="EntityTransaction.Delete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
